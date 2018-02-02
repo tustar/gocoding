@@ -656,9 +656,7 @@ func dehex(s string) []byte {
 	s = strings.Replace(s, " ", "", -1)
 	s = strings.Replace(s, "\n", "", -1)
 	b, err := hex.DecodeString(s)
-	if err != nil {
-		panic(err)
-	}
+	checkErr(err)
 	return b
 }
 

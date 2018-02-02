@@ -10,8 +10,8 @@ type Var string
 type literal float64
 
 type unary struct {
-	op   rune
-	x, y Expr
+	op rune
+	x  Expr
 }
 
 type binary struct {

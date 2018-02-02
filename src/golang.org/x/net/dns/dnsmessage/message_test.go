@@ -13,9 +13,7 @@ import (
 
 func mustNewName(name string) Name {
 	n, err := NewName(name)
-	if err != nil {
-		panic(err)
-	}
+	checkErr(err)
 	return n
 }
 

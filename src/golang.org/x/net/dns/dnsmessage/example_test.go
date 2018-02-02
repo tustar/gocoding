@@ -14,9 +14,7 @@ import (
 
 func mustNewName(name string) dnsmessage.Name {
 	n, err := dnsmessage.NewName(name)
-	if err != nil {
-		panic(err)
-	}
+	checkErr(err)
 	return n
 }
 
@@ -56,9 +54,7 @@ func ExampleParser() {
 	}
 
 	buf, err := msg.Pack()
-	if err != nil {
-		panic(err)
-	}
+	checkErr(err)
 
 	wantName := "bar.example.com."
 

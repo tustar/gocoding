@@ -137,9 +137,7 @@ func NewLocalPacketListener(network string) (net.PacketConn, error) {
 
 func localPath() string {
 	f, err := ioutil.TempFile("", "nettest")
-	if err != nil {
-		panic(err)
-	}
+	checkErr(err)
 	path := f.Name()
 	f.Close()
 	os.Remove(path)
